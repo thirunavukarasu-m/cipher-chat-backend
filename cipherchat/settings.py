@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'cipherchat.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-db_url = os.getenv("DATABASE_URL", "postgres://postgres:postgres@localhost:5432/cipher-chat")
+db_url = os.getenv("DATABASE_URL", "postgres://postgres:postgres@localhost:5433/cipher-chat")
 pu = urlparse(db_url)
 DATABASES = {
     "default": {
@@ -93,7 +93,7 @@ DATABASES = {
         "USER": pu.username,
         "PASSWORD": pu.password,
         "HOST": pu.hostname,
-        "PORT": pu.port or 5432,
+        "PORT": pu.port or 5433,
     }
 }
 
